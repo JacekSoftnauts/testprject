@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint testSDKpod.podspec' to ensure this is a
+#  Be sure to run `pod spec lint testSDKpodJack.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "testSDKpod"
-  spec.version      = "0.0.5"
-  spec.summary      = "A short description of testSDKpod."
+  spec.name         = "testSDKpodJack"
+  spec.version      = "0.0.8"
+  spec.summary      = "testSDKpodJack SDK for iOS"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
 
   spec.description  = "test pod for test create pods"
 
-  spec.homepage     = "http://EXAMPLE/testSDKpod"
+  spec.homepage     = "https://github.com/JacekSoftnauts"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -38,8 +38,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = "MIT (example)"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-   spec.platform     = :ios, "12.0"
+  spec.platform     = :ios, "12.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -78,8 +78,8 @@ Pod::Spec.new do |spec|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-
-  spec.source       = { :git => "https://github.com/JacekSoftnauts/testprject.git", :tag => "0.0.5" }
+  spec.ios.vendored_frameworks = 'testSDKpodJack.framework'
+  spec.source      = { :http => 'https://github.com/JacekSoftnauts/testpodSDK/blob/master/testSDKpodJack.zip?raw=true' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "testSDKpod"
+  # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -133,7 +133,5 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-
-  # s.swift_version = "4.2" 
 
 end
